@@ -3,26 +3,55 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18.20.5
-
+      nodejs: 18
     commands:
       - npm install
 
   build:
     commands:
-      # run build script
       - npm run build
+      - mkdir -p output
+      - cp -r dist/* output/
+      - cp appspec.yml output/
+      - cp -r scripts output/
+      - cp package.json output/
 
 artifacts:
-  base-directory: dist
+  base-directory: output
   files:
-    - "**/*"
+    - '**/*'
+
+
+
+
+# version: 0.2
+
+# phases:
+#   install:
+#     runtime-versions:
+#       nodejs: 18.20.5
+
+#     commands:
+#       - npm install
+
+#   build:
+#     commands:
+#       # run build script
+#       - npm run build
+
 # artifacts:
-#   # include all files required to run the application
+#   base-directory: dist
 #   files:
-#     - dist//*
-#     #- src//*
-#     - package.json
-#     - appspec.yml
-#     - scripts//*
-#   base-directory: .
+#     - "**/*"
+# # artifacts:
+# #   # include all files required to run the application
+# #   files:
+# #     - dist//*
+# #     #- src//*
+# #     - package.json
+# #     - appspec.yml
+# #     - scripts//*
+# #   base-directory: .
+
+
+
