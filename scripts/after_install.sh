@@ -1,6 +1,5 @@
 #!/bin/bash
-echo "Running AfterInstall hook..."
-# Restart Apache or Nginx if needed:
-# sudo systemctl restart nginx
-# or
-# sudo systemctl restart apache2
+cd /var/www/html
+ls -la
+cp -arp dist/. . && rm -rf dist
+service httpd restart
