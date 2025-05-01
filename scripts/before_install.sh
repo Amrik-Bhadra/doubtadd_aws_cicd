@@ -1,2 +1,3 @@
 #!/bin/bash
-yum update -y
+echo "Cleaning old contents from /var/www/html"
+rm -rf /var/www/html/*
