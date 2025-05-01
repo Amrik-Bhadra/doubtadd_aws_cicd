@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { BiSolidMessageSquareAdd } from "react-icons/bi";
 import NewDoubtForm from "../components/NewDoubtForm";
+import logo from "/solved.png"
 
 const MainLayout = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -9,8 +10,8 @@ const MainLayout = () => {
     <main className="h-screen relative">
       <header className="h-[8%] bg-white border-b p-2 flex items-center justify-between px-28">
         <nav>
-          <Link to="/" className="text-xl font-semibold">
-            DoubtAdda
+          <Link to="/" className="text-xl font-semibold flex items-center gap-2">
+            <img src={logo}/>DoubtAdda
           </Link>
         </nav>
       </header>
