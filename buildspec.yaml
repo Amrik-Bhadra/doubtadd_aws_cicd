@@ -4,15 +4,20 @@ phases:
   install:
     runtime-versions:
       nodejs: 18.20.5
-   
+
     commands:
-        - npm install
-       
+      - echo Installing dependencies...
+      - npm install
+
   build:
     commands:
-        # run build script
-        - npm run build
-     
+      - echo Building the React app...
+      - npm run build
+
+  post_build:
+    commands:
+      - echo Build complete. Preparing artifacts...
+
 artifacts:
   # include all files required to run the application
   files:
